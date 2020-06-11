@@ -13,8 +13,9 @@ float output;
 public:
     perceptron(float bias, std::vector<float> labels, int inputLength);
 
-    float thresholdActivation(float sum){}
-    void feedForward(std::vector<float> inputs){}
-    void updateWeights(int label, std::vector<float> inputs){}
-    float getOutput(){}
+    void thresholdActivation();
+    void feedForward(std::vector<float> inputs);
+    void updateWeights(int label, std::vector<float> inputs);
+    float getOutput();
+    float predict(std::vector<float> inputs);
 };

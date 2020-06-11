@@ -4,7 +4,7 @@
 using namespace std;
 int main(int argc, char ** argv){
     
-    int numPerceptrons = 3; //user defined
+    int numPerceptrons = 5; //user defined
     int inputLength = 2;
     vector<float> inputs = {1,1,1,0,0,1,0,0}; //this has been flattened, 2 values represent the inputs to a single perceptron
     vector<float> labels = {0,1,1,0};
@@ -28,7 +28,6 @@ int main(int argc, char ** argv){
         for(int j = 0; j < numPerceptrons; j++){
             hiddenLayer1[j].feedForward(in);
             outputs[j] = hiddenLayer1[j].getOutput(); //returns output of perceptron after feed forward
-            cout << outputs[j];
         }
         outputLayer[0].feedForward(outputs); //outputs of 1st hidden layer are inputs to output layer
      
