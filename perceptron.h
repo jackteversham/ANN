@@ -17,13 +17,4 @@ public:
     void feedForward(std::vector<float> inputs){}
     void updateWeights(int label, std::vector<float> inputs){}
     float getOutput(){}
-    
-
-
-
-
-
-  
-
-
 };
