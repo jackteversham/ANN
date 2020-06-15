@@ -17,10 +17,12 @@ OPTIMIZE=-O3 -std=c++11 -Wall #but do not add error checking at runtime
 
 #the default target is debug code
 debug:
-	
+	$(CC) $(FLAGS) $(COMPILE) $(PROGRAMTWO).o $(PROGRAMTWO).cpp #compile
 	$(CC) $(FLAGS) $(COMPILE) $(PROGRAM).o $(PROGRAM).cpp #compile
 	#$(CC) $(FLAGS) $(COMPILE) perceptron.o perceptron.cpp #compile
 	$(CC) $(FLAGS) $(LINK) $(PROGRAM) $(PROGRAM).o #link
+	$(CC) $(FLAGS) $(LINK) $(PROGRAMTWO) $(PROGRAMTWO).o #link
+	
 	
 clean:
 	rm -f *.o #clear out object files

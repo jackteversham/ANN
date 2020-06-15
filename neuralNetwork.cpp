@@ -17,18 +17,13 @@ int main(int argc, char ** argv){
     float result = 0;
    
     vector<float> biases;
-
     vector<perceptron> hiddenLayer1;
-    perceptron p1(1,1, 1, 0.8);
-    perceptron p2(1,1,0,0.8);
-    perceptron p3(1,1,0,0.8);
 
-    // for(int i = 0; i < numPerceptrons; i++){
-    //     hiddenLayer1.push_back(perceptron(0, labels, inputLength));
-    // }
 
-    //outputLayer.push_back(perceptron(-1, labels, numPerceptrons)); //input length = number of perceptrons in previous layer
- 
+    perceptron p1(1, 0.8,0,inputLength);
+    perceptron p2(0,0.8,0, inputLength);
+    perceptron p3(0,0.8,0, inputLength);
+
  //TRAIN:
  ofstream out("Part1.txt", true);
  out << "\nInput:   Hidden layer output:  Training Label:"<<endl;
@@ -43,17 +38,12 @@ int main(int argc, char ** argv){
         
                  p1.feedForward(in, labels3[count], true);
                  outputs[0] = p1.thresholdActivation(labels3[count], true, in);
-               // cout << "Label1: "<<labels3[count];
            
                 p2.feedForward(in, labels1[count], true);
                 outputs[1] = p2.thresholdActivation(labels1[count], true, in);
-               // cout<< "\tlabel2: "<<labels1[count]<<endl;
 
                 out <<  outputs[0]<< " "<<outputs[1]<<"\t\t\t\t";
-               
-
-         
-        
+    
            p3.feedForward(outputs, labels[count], true); //outputs of 1st hidden layer are inputs to output layer
           output =  p3.thresholdActivation(labels[count], true, outputs);
           out << "\t"<< output<<endl;
@@ -63,12 +53,7 @@ int main(int argc, char ** argv){
     }
     out.close();
     cout << endl<<endl;
-    
- 
- 
 
-    // result = outputLayer[0].getOutput();
-    // cout <<endl<< result<<endl;
 
     //predict new inputs:
     count = 0;
@@ -81,8 +66,6 @@ int main(int argc, char ** argv){
 
                 p2.feedForward(in, labels1[count], true); ////feed perceptron 2 forward
                 outputs[1] = p2.thresholdActivation(labels1[count], false, in); 
-
-           // outputs[j] = hiddenLayer1[j].getOutput(); //returns output of perceptron after feed forward
         
         p3.feedForward(outputs,labels[count], false); //outputs of 1st hidden layer are inputs to output layer
         float res = p3.thresholdActivation(labels[count], false, in);

@@ -44,3 +44,10 @@ Input:   Hidden layer output:  Training Label:
 1 0				0 1					1
 0 1				0 1					1
 1 1				1 1					0
+
+Question 3:
+
+Output of hidden layer neuron 1: 0.710949
+Output of hidden layer neuron 2: 0.425557
+
+Question 4:
