@@ -1,0 +1,46 @@
+Question 1:
+
+The minimum number of perceptrons required to solve the XOR problem was a total of 3.
+They were arranged in the following architecture:
+
+1 hidden layer with 2 perceptrons.
+1 output layer with 1 perceptron.
+
+  ||      ||
+  p1      p2        hidden layer 
+   \      /
+    \    /
+     \  /
+      p3            output layer
+      |
+    output
+
+Question 2:
+
+Perceptron p1 was trained as an AND gate, and perceptron p2 was trained as an OR gate. 
+Perceptron p3 was trained to give the ouput of the XOR truth table.
+
+With a learning rate of 0.8, it took a total of 16 training examples to learn the correct output.
+The training examples are listed below:
+
+Input:   Hidden layer output:  Training Label:
+0 0				0 0					0
+1 0				0 1					1
+0 1				0 1					1
+1 1				1 1					1
+0 0				0 0					0
+1 0				0 1					1
+0 1				0 1					1
+1 1				1 1					1
+0 0				0 0					0
+1 0				0 1					0
+0 1				0 1					1
+1 1				1 1					0
+0 0				0 0					0
+1 0				0 1					1
+0 1				0 1					1
+1 1				1 1					0
+0 0				0 0					0
+1 0				0 1					1
+0 1				0 1					1
+1 1				1 1					0

@@ -1,5 +1,6 @@
 
 PROGRAM=neuralNetwork
+PROGRAMTWO=part2
 
 #by default CC = gcc, this will give 'undefined std::xxx errors
 CC=g++  
