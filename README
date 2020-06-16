@@ -11,3 +11,7 @@ TO RUN:
 
 To Clean:
  ---> make clean
+
+ Executable names:
+ --> part1: neuralNetwork
+ --> part2: part2
