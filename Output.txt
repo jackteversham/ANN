@@ -51,3 +51,31 @@ Output of hidden layer neuron 1: 0.710949
 Output of hidden layer neuron 2: 0.425557
 
 Question 4:
+
+Output of ANN:  0.666688
+
+Question 5:
+
+Mean squared error: 0.0941
+
+Input:   Hidden layer output:  Training Label:
+0 0							0 0									0
+1 0							0 1									1
+0 1							0 1									1
+1 1							1 1									1
+0 0							0 0									0
+1 0							0 1									1
+0 1							0 1									1
+1 1							1 1									1
+0 0							0 0									0
+1 0							0 1									0
+0 1							0 1									1
+1 1							1 1									0
+0 0							0 0									0
+1 0							0 1									1
+0 1							0 1									1
+1 1							1 1									0
+0 0							0 0									0
+1 0							0 1									1
+0 1							0 1									1
+1 1							1 1									0

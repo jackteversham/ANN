@@ -12,7 +12,7 @@ perceptron::perceptron(float threshold, float learningRate, float bias, int inpu
     }
 }
 
-float perceptron::thresholdActivation(int label, bool train, std::vector<float> inputs){
+float perceptron::thresholdActivation(const int label, bool train, std::vector<float> inputs){
     if(sum>threshold) {
         if(label != 1 && train == true){ //if the output is not what we expect and we are training
             //output = 1.0;
@@ -28,7 +28,7 @@ float perceptron::thresholdActivation(int label, bool train, std::vector<float> 
         return 0; }
     } 
  
-void perceptron::feedForward(vector<float> inputs, int label, bool train){
+void perceptron::feedForward(vector<float> inputs, const float label, bool train){
     sum = 0;
     sum += bias;
     for(int i = 0; i< inputs.size(); i++){

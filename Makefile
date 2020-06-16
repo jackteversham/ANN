@@ -27,6 +27,7 @@ debug:
 clean:
 	rm -f *.o #clear out object files
 	rm -f $(PROGRAM) #and the final executable
+	rm -f $(PROGRAMTWO) #and part2 executable
 
 run:
 	./$(PROGRAM)

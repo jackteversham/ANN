@@ -13,8 +13,6 @@ int main(int argc, char ** argv){
     vector<float> labels3 = {0,0,0,1}; //AND
 
     vector<float> outputs(numPerceptrons, 0.0);
-    float bias = 0;
-    float result = 0;
    
     vector<float> biases;
     vector<perceptron> hiddenLayer1;
@@ -25,7 +23,7 @@ int main(int argc, char ** argv){
     perceptron p3(0,0.8,0, inputLength);
 
  //TRAIN:
- ofstream out("Part1.txt", true);
+ ofstream out("Output.txt", true);
  out << "\nInput:   Hidden layer output:  Training Label:"<<endl;
  float output;
  int count = 0;
@@ -34,7 +32,7 @@ int main(int argc, char ** argv){
     count = 0;
     for(int i = 0; i < inputs.size(); i+=2){
         vector<float> in = {inputs[i], inputs[i+1]}; //iterate through the inputs, 2 at a time
-           out<<in[0] << " "<<in[1]<<"\t\t\t\t";
+           out<<in[0] << " "<<in[1]<<"\t\t\t\t\t\t\t";
         
                  p1.feedForward(in, labels3[count], true);
                  outputs[0] = p1.thresholdActivation(labels3[count], true, in);
@@ -42,7 +40,7 @@ int main(int argc, char ** argv){
                 p2.feedForward(in, labels1[count], true);
                 outputs[1] = p2.thresholdActivation(labels1[count], true, in);
 
-                out <<  outputs[0]<< " "<<outputs[1]<<"\t\t\t\t";
+                out <<  outputs[0]<< " "<<outputs[1]<<"\t\t\t\t\t\t\t\t";
     
            p3.feedForward(outputs, labels[count], true); //outputs of 1st hidden layer are inputs to output layer
           output =  p3.thresholdActivation(labels[count], true, outputs);

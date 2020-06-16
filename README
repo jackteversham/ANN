@@ -1,0 +1,13 @@
+To COMPILE:
+  -> type make in src directory
+
+TO RUN:
+--> to run part1: execute command 'make run'
+  --> output is sent to console and 'Output.txt'
+
+--> to run part2: execute command './part2'
+   --> output is sent to console
+
+
+To Clean:
+ ---> make clean

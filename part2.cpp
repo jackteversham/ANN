@@ -26,24 +26,27 @@ int main(int argc, char ** argv){
     vector<float> outputLayer2(inputLength-1,0);
     float output;
 
+    bool question5 = false;
+    if(question5){
     p31.setWeights({0.8, 1.0});
     p31.setBias(-0.3);
+    }
 
     const int MAX_ITERATIONS = 1000;
 
     for(int i = 0; i< MAX_ITERATIONS; i++){
-        cout << output<< endl;
+       // cout << output<< endl;
         p11.feedForward(inputs, 0, true);
         p12.feedForward(inputs, 1, true);
         p13.feedForward(inputs, 1, true);
 
-        outputLayer1[0] = p11.thresholdActivation(1, true, inputs);
-        outputLayer1[1] = p12.thresholdActivation(1, true, inputs);
-        outputLayer1[2] = p13.thresholdActivation(1, true, inputs);
+        // outputLayer1[0] = p11.thresholdActivation(0, true, inputs);
+        // outputLayer1[1] = p12.thresholdActivation(0, true, inputs);
+        // outputLayer1[2] = p13.thresholdActivation(0, true, inputs);
 
-        // outputLayer1[0] = p11.sigmoidActivation();
-        // outputLayer1[1] = p12.sigmoidActivation();
-        // outputLayer1[2] = p13.sigmoidActivation();
+        outputLayer1[0] = p11.sigmoidActivation();
+        outputLayer1[1] = p12.sigmoidActivation();
+        outputLayer1[2] = p13.sigmoidActivation();
 
         p21.feedForward(outputLayer1, 1, true); //label won't effect things
         p22.feedForward(outputLayer1, 1, true); //label won't effect things
@@ -59,7 +62,9 @@ int main(int argc, char ** argv){
             break;
         }
         else{
-            // p31.updateWeights(0.36, outputLayer2, output);
+            if(!question5){
+            p31.updateWeights(0.36, outputLayer2, output);
+            }
         }
         //hidden and output layers use sigmoid activation
     }
@@ -67,8 +72,6 @@ int main(int argc, char ** argv){
    cout << "output: "<<output<<endl;
    cout << "Output of hidden layer neuron 1: "<<outputLayer2[0]<<endl;
    cout << "Output of hidden layer neuron 2: "<<outputLayer2[1]<<endl;
-
-   
 
 
 return 0;
