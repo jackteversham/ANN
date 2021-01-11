@@ -1,3 +1,5 @@
+# Artificial Neural Network
+
 To COMPILE:
   -> type make in src directory
 
