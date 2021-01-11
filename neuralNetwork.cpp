@@ -23,7 +23,7 @@ int main(int argc, char ** argv){
     perceptron p3(0,0.8,0, inputLength);
 
  //TRAIN:
- ofstream out("Output.txt", true);
+ ofstream out("Output.txt", ios::app);
  out << "\nInput:   Hidden layer output:  Training Label:"<<endl;
  float output;
  int count = 0;
