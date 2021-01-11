@@ -1,4 +1,12 @@
 # Artificial Neural Network
+Part 1:
+
+neuralNetwork.cpp contains an algorithm that uses only perceptrons with threshold activation functions and the perceptron learning rule to solve the binary A XOR B problem.
+
+Part 2:
+
+A fully connected feed-forward neural network that consists of 3 input neurons, 2 hidden layer neurons and 1 output neuron. The hidden layer neurons and output neuron use the Sigmoid activation function.
+
 
 To COMPILE:
   -> type make in src directory
